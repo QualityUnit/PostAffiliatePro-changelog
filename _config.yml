@@ -1,0 +1,67 @@
+name: Post Affiliate Pro
+description: Post Affiliate Pro development team pushes out new features, improvements and bug fixes several times per day. Take a look at our latest updates here.
+url: "https://dev.postaffiliatepro.com"
+logo: site-logo.png
+logotype: site-logotype.png
+title: Post Affiliate Pro Changelog
+
+owner:
+  name: QualityUnit.com, All rights reserved
+
+google_analytics: UA-56486-1
+google_analytics_domain: qualityunit.com
+
+# External services
+posts_url: "/posts/"
+posts_title: "POSTS"
+product_url: "https://www.postaffiliatepro.com"
+product_title: "PRODUCT"
+company_url: "https://www.qualityunit.com"
+company_title: "ABOUT US"
+
+# Markdown rendering
+markdown: kramdown
+kramdown:
+  smart_quotes: apos,apos,quot,quot
+  parse_block_html: true
+
+# Sass
+sass:
+  sass_dir:         _sass
+  style:            compressed
+
+# Site settings
+permalink: /posts/:year/:month/:day/:title/
+relative_permalinks: false
+
+authors:
+  aharsani:
+    name: Andrej Haršáni
+    gravatar: bf118f0a3f400fdb9bc0b32d8cc498d6
+  mbebjak:
+    name: Michal Bebjak
+    gravatar: fee1cc2a670a7c6b096f6dcaae2e9a08
+  mjancovic:
+    name: Miloš Jančovič
+    gravatar: 5a27642c058fcde0108296e004160764
+  jperdochqu:
+    name: Ján Perďoch
+    gravatar: b5be30f78bb29d6c7d7b2b406f10145f
+  vzeman:
+    name: Viktor Zeman
+    gravatar: b08cb3172230cfa398a2b83884c181cc
+  opok:
+    name: Ondrej Pok
+    gravatar:
+  jurajsim:
+    name: Juraj Šimon
+    gravatar: 9ac0c69ed358a92808e16c5dd536a422
+  mkendera:
+    name: Matej Kendera
+    gravatar: 7ce192d2ecc0271e95713dbe090ce61e
+  lnikodem:
+    name: Ľubomír Nikodém
+    gravatar:
+  jzernovic:
+    name: Jakub Žernovič
+    gravatar:

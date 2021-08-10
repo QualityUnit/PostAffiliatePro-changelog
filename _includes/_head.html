@@ -1,0 +1,34 @@
+<head>
+	<meta charset="utf-8">
+	<title>{{ site.title }}</title>
+	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+	<!-- Open Graph -->
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+
+	{% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
+	<link rel="canonical" href="{{ canonical }}">
+	<link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta http-equiv="cleartype" content="on">
+
+	<!-- Styles and fonts -->
+	<link rel="stylesheet"
+		  href="https://fonts.googleapis.com/css?family=Noto%20Serif%3A400%2C400i%2C700%2C700i%7CPoppins%3A300%2C400%2C500%2C700%7COpen%20Sans%3A300%2C400%2C600%2C700&#038;subset=latin-ext&#038;display=swap"/>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+		  rel="stylesheet">
+	<link rel="stylesheet" href="/css/main.css" type="text/css">
+
+	<!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+
+</head>
