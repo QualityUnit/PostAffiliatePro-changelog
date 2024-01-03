@@ -37,9 +37,6 @@ tags: [blog, articles, writing, thoughts]
                 </div>
 			<div itemprop="description" class="issues-list">
   				{{ post.content | split:"<!--more-->" | first }}
-			</div>
-			<div itemprop="description" class="issues-list">
-              {{ post.content }}
             </div>
             {% assign postSecondPartSize = post.content | split:"<!--more-->" | slice:1 |  size %}
   			{% if postSecondPartSize > 0 %}
