@@ -41,8 +41,8 @@ tags: [blog, articles, writing, thoughts]
 			<div itemprop="description" class="issues-list">
               {{ post.content }}
             </div>
-            {% assign postSize = post.content | size %}
-  			{% if postSize > 500 %}
+            {% assign postSecondPartSize = post.content | split:"<!--more-->" | slice:1 |  size %}
+  			{% if postSecondPartSize > 0 %}
                 <a class="show-all-changes" href="{{ site.url }}{{ post.url }}">
 					<span>show all changes in this release</span>
 				</a>
