@@ -314,6 +314,10 @@ footer {
       line-height: 22px;
       text-indent: -35px;
     }
+
+    li strong {
+      padding-left:55px;
+    }
   }
 
   h3 {
@@ -328,16 +332,12 @@ footer {
     }
   }
 
-  strong {
+  p > strong {
     background: #ffd78d;
     padding: 15px 20px;
     border-radius: 4px;
     color: #442600;
     display: inline-block;
-  }
-  
-  li strong {
-    padding-left:55px;
   }
 }
 
