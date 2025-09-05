@@ -305,10 +305,10 @@ footer {
 }
 
 .issues-list {
-  > ul {
+  > ul:first-child {
     list-style: none;
     
-    > li {
+    li {
       font-family: 'Open Sans', sans-serif;
       padding: 0 0 5px 0;
       line-height: 22px;
