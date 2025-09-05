@@ -305,15 +305,15 @@ footer {
 }
 
 .issues-list {
-  li {
-    font-family: 'Open Sans', sans-serif;
-    padding: 0 0 5px 0;
-    line-height: 22px;
-    text-indent: -35px;
-  }
-
-  ul {
+  > ul {
     list-style: none;
+    
+    > li {
+      font-family: 'Open Sans', sans-serif;
+      padding: 0 0 5px 0;
+      line-height: 22px;
+      text-indent: -35px;
+    }
   }
 }
 
