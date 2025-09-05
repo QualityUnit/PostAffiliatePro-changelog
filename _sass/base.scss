@@ -305,7 +305,8 @@ footer {
 }
 
 .issues-list {
-  > ul:first-child {
+  > ul:first-child,
+  > ul:first-child + ul {
     list-style: none;
     
     li {
