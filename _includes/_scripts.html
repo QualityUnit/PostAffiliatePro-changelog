@@ -27,7 +27,7 @@ $.urlParam = function(name){
 if($.urlParam('linkify')) {
   $(".issues-list ul li").each(function( index ) {
     replacePattern = /\(#(\d*)\)/gim;
-    $(this).html($(this).text().replace(replacePattern, '(<a href="https://github.com/QualityUnit/pap-issues/issues/$1" target="_blank">$1</a>)'));
+    $(this).html($(this).html().replace(replacePattern, '(<a href="https://github.com/QualityUnit/pap-issues/issues/$1" target="_blank">$1</a>)'));
   });
 }
 </script>
