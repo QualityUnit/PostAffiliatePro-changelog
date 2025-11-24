@@ -1,9 +1,9 @@
 ---
 layout: page
 permalink: /posts/
-title: "Posts"
-description: "Posts ..."
-tags: [blog, articles, writing, thoughts]
+title: "Versions"
+description: "Versions ..."
+tags: [versions, history, builds, releases]
 ---
 
 <div class="flex-center">
