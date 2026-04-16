@@ -12,17 +12,52 @@ Create a changelog MD file for Post Affiliate Pro release version: $ARGUMENTS
    ---
    ```
 
-2. **Gather issue details** - For each issue number, fetch details from GitHub:
-   `https://api.github.com/repos/QualityUnit/PostAffiliatePro/issues/{number}`
+2. **Fetch issues for the milestone** using the GitHub Search API via `gh`:
+   ```
+   gh api "search/issues?q=repo:QualityUnit/PostAffiliatePro+is:closed+milestone:{version}+-project:qualityunit/38&per_page=100&page={page}" --jq '.items[] | {number, title, labels: [.labels[].name]}'
+   ```
+   - Paginate: keep incrementing `page` until fewer than 100 results are returned
+   - Exclude issues belonging to GitHub project `qualityunit/38` (the `-project:qualityunit/38` filter)
 
-3. **Organize into sections** following this structure:
+3. **Categorize each issue by its first matching label** (check in this order):
+   - `type: security` → Security (**special handling**, see Security Rules below)
+   - `type: feature` → New Feature
+   - `type: improvement` → Improvement
+   - `type: plugin` → Plugin
+   - `type: styling` → Style
+   - `type: performance` or `type:performance` → Performance
+   - `type: refactoring` or `type: technical` → **Skip** (these are internal infrastructure/code changes not relevant to customers; only include if the change has clear customer-facing impact)
+   - No matching label → Bug Fix
+
+4. **Organize into sections** following this structure:
    - ## New Features (if any)
    - ## Improvements
    - ## Bug Fixes
    Each section should have subsections grouped by area (e.g., ### Security, ### REST API v3, ### User Interface, ### Banners, ### Integrations, ### Affiliate Panel, ### Network, etc.)
+   
+   Map categories to sections:
+   - Security, New Feature → ## New Features (or ## Security if only security items)
+   - Improvement, Performance, Style → ## Improvements
+   - Bug Fix, Plugin → ## Bug Fixes (unless they clearly fit elsewhere)
 
-4. **Format each item** as:
+5. **Format each item** as:
    `- **Bold Title** - Brief description (#issue_number)`
+
+## Security Rules
+
+Security issues require careful handling — **never disclose vulnerability details publicly**.
+
+- **Theoretical / internal hardening** (e.g., upgrading a library, adding input validation where no exploit was known): **Skip entirely** — these are internal improvements, not customer-facing changes.
+- **Real vulnerability that was fixed**: Include, but use only vague, general language. Do NOT reveal:
+  - The attack vector or how it could be exploited
+  - Specific endpoints, parameters, or components affected
+  - CVE numbers or severity scores
+  - Technical details of the fix
+  
+  Good example: `- **Security Improvement** - Improved input sanitization in the merchant panel (#1234)`
+  Bad example: `- **XSS Fix** - Fixed stored XSS vulnerability in the campaign name field that allowed script injection via the REST API (#1234)`
+
+- **When unsure** whether a security issue is theoretical or real, **ask before including it**.
 
 ## Writing Rules
 
